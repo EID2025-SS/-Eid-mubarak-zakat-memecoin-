@@ -146,6 +146,20 @@
       border-radius: 5px;
       margin-top: 10px;
     }
+
+    #copy-address {
+      background: #2ecc71;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    #copy-address:hover {
+      background: #27ae60;
+    }
   </style>
 </head>
 <body>
@@ -202,13 +216,27 @@
     </div>
   </section>
 
+  <!-- How to Buy Section -->
+  <section id="how-to-buy">
+    <div class="container">
+      <h2>How to Buy $EID</h2>
+      <ol>
+        <li>Download and install the <a href="https://phantom.app/" target="_blank">Phantom Wallet</a>.</li>
+        <li>Fund your wallet with SOL (Solana's native token).</li>
+        <li>Connect your wallet to a DEX like <a href="https://raydium.io/" target="_blank">Raydium</a> or <a href="https://orca.so/" target="_blank">Orca</a>.</li>
+        <li>Swap SOL for $EID using the contract address (available after launch).</li>
+      </ol>
+    </div>
+  </section>
+
   <!-- Contract Address Section -->
   <section id="contract">
     <div class="container">
       <h2>Contract Address</h2>
       <div id="contract-address">
-        <p>Contract address will be available after launch on March 31, 2025.</p>
+        <p>Contract address will be available after launch on March 25, 2025.</p>
         <input type="text" id="contract-input" placeholder="Enter contract address here" disabled>
+        <button id="copy-address">Copy Address</button>
       </div>
     </div>
   </section>
@@ -227,8 +255,8 @@
 
   <!-- JavaScript -->
   <script>
-    // Countdown to Launch (March 31, 2025)
-    const launchDate = new Date("2025-03-31").getTime();
+    // Countdown to Launch (March 25, 2025)
+    const launchDate = new Date("2025-03-25").getTime();
 
     const countdown = setInterval(() => {
       const now = new Date().getTime();
@@ -256,6 +284,16 @@
       } else {
         alert("Phantom Wallet not detected. Please install it.");
       }
+    });
+
+    // Copy Contract Address
+    document.getElementById("copy-address").addEventListener("click", () => {
+      const contractInput = document.getElementById("contract-input");
+      contractInput.removeAttribute("disabled");
+      contractInput.select();
+      document.execCommand("copy");
+      contractInput.setAttribute("disabled", true);
+      alert("Contract address copied to clipboard!");
     });
 
     // Smooth Scrolling
