@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,12 +126,7 @@
       text-decoration: underline;
     }
 
-    /* Wallet Integration */
-    #wallet-connect {
-      text-align: center;
-      margin-top: 20px;
-    }
-
+    /* Contract Address Section */
     #contract-address {
       background: #f4f4f4;
       padding: 20px;
@@ -167,13 +163,10 @@
   <header>
     <div class="container">
       <div class="overlay">
-        <!-- Placeholder Logo (Replace with your logo if needed) -->
-        <div class="logo">[Your Logo Here]</div>
+        <!-- Pre-loaded Logo (Base64) -->
+        <img src="data:image/png;base64,YOUR_BASE64_LOGO_HERE" alt="EidMubarak Logo" class="logo">
         <h1>EidMubarak ($EID)</h1>
         <p>Celebrate Eid with Crypto Joy!</p>
-        <div id="wallet-connect">
-          <button class="cta-button" id="connect-wallet">Connect Wallet</button>
-        </div>
         <p id="countdown">Loading countdown...</p>
         <a href="#how-to-buy" class="cta-button">How to Buy $EID</a>
       </div>
@@ -223,8 +216,8 @@
       <ol>
         <li>Download and install the <a href="https://phantom.app/" target="_blank">Phantom Wallet</a>.</li>
         <li>Fund your wallet with SOL (Solana's native token).</li>
-        <li>Connect your wallet to a DEX like <a href="https://raydium.io/" target="_blank">Raydium</a> or <a href="https://orca.so/" target="_blank">Orca</a>.</li>
-        <li>Swap SOL for $EID using the contract address (available after launch).</li>
+        <li>Copy the $EID contract address (available after launch).</li>
+        <li>Paste the contract address into your wallet or a DEX like <a href="https://raydium.io/" target="_blank">Raydium</a> or <a href="https://orca.so/" target="_blank">Orca</a> to swap SOL for $EID.</li>
       </ol>
     </div>
   </section>
@@ -270,21 +263,6 @@
         document.getElementById("countdown").innerHTML = "Launch Day!";
       }
     }, 1000);
-
-    // Connect Wallet (Phantom Integration)
-    document.getElementById("connect-wallet").addEventListener("click", async () => {
-      if (window.solana && window.solana.isPhantom) {
-        try {
-          const resp = await window.solana.connect();
-          console.log("Connected to Phantom Wallet:", resp.publicKey.toString());
-          alert("Wallet connected successfully!");
-        } catch (err) {
-          console.error("Connection error:", err);
-        }
-      } else {
-        alert("Phantom Wallet not detected. Please install it.");
-      }
-    });
 
     // Copy Contract Address
     document.getElementById("copy-address").addEventListener("click", () => {
