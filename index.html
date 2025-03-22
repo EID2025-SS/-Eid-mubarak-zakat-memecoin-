@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EidMubarak ($EID) – Celebrate Eid with Crypto Joy!</title>
+  <title>Eid Memecoin – Halal Crypto Joy</title>
   <style>
     /* General Styles */
     body {
@@ -49,7 +49,7 @@
     }
 
     h1 span {
-      color: #e67e22; /* Accent color for "EidMubarak" */
+      color: #e67e22; /* Accent color for "Eid Memecoin" */
     }
 
     p {
@@ -161,11 +161,12 @@
   <header>
     <div class="container">
       <div class="overlay">
-        <!-- Text-Based Logo -->
-        <h1><span>EidMubarak</span> $EID</h1>
-        <p>Celebrate Eid with Crypto Joy!</p>
+        <!-- Updated Header Text -->
+        <h1><span>Eid Memecoin</span> $EID</h1>
+        <p>Halal Crypto Joy for the Community!</p>
         <p id="countdown">Loading countdown...</p>
         <a href="#how-to-buy" class="cta-button">How to Buy $EID</a>
+        <a href="https://pump.fun/your-coin-link" class="cta-button" target="_blank">Buy Now on Pump.fun</a>
       </div>
     </div>
   </header>
@@ -224,7 +225,7 @@
     <div class="container">
       <h2>Contract Address</h2>
       <div id="contract-address">
-        <p>Contract address will be available after launch on March 25, 2025.</p>
+        <p>Contract address will be available after launch.</p>
         <input type="text" id="contract-input" placeholder="Enter contract address here" disabled>
         <button id="copy-address">Copy Address</button>
       </div>
@@ -234,7 +235,7 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 EidMubarak ($EID). All rights reserved.</p>
+      <p>&copy; 2023 Eid Memecoin ($EID). All rights reserved.</p>
       <div class="social-links">
         <a href="https://twitter.com/eid_solana" target="_blank">Twitter</a>
         <a href="https://telegram.org" target="_blank">Telegram</a>
@@ -245,15 +246,19 @@
 
   <!-- JavaScript -->
   <script>
-    // Countdown to Launch (March 25, 2025)
-    const launchDate = new Date("2025-03-25").getTime();
+    // Countdown to Launch (3 days remaining)
+    const launchDate = new Date().getTime() + (3 * 24 * 60 * 60 * 1000); // 3 days from now
 
     const countdown = setInterval(() => {
       const now = new Date().getTime();
       const distance = launchDate - now;
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      document.getElementById("countdown").innerHTML = `${days} days until launch!`;
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s until launch!`;
 
       if (distance < 0) {
         clearInterval(countdown);
