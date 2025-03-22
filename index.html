@@ -66,10 +66,20 @@
       font-size: 1.1rem;
       margin: 10px;
       transition: background 0.3s ease;
+      display: inline-block; /* Ensure buttons are inline */
     }
 
     .cta-button:hover {
       background: #d35400;
+    }
+
+    /* Stack Buttons on Mobile */
+    @media (max-width: 768px) {
+      .cta-button {
+        display: block; /* Stack buttons vertically */
+        width: 80%; /* Make buttons wider for better touch targets */
+        margin: 10px auto; /* Center buttons */
+      }
     }
 
     /* Sections */
@@ -165,6 +175,7 @@
         <h1><span>Eid Memecoin</span> $EID</h1>
         <p>Halal Crypto Joy for the Community!</p>
         <p id="countdown">Loading countdown...</p>
+        <!-- Buttons -->
         <a href="#how-to-buy" class="cta-button">How to Buy $EID</a>
         <a href="https://pump.fun/your-coin-link" class="cta-button" target="_blank">Buy Now on Pump.fun</a>
       </div>
