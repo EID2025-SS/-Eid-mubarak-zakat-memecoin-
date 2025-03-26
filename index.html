@@ -174,10 +174,10 @@
         <!-- Updated Header Text -->
         <h1><span>Eid Memecoin</span> $EID</h1>
         <p>Halal Crypto Joy for the Community!</p>
-        <p id="countdown">Loading countdown...</p>
+        <p id="countdown">🚀 $EID IS LIVE! BUY NOW!</p>
         <!-- Buttons -->
         <a href="#how-to-buy" class="cta-button">How to Buy $EID</a>
-        <a href="https://pump.fun/your-coin-link" class="cta-button" target="_blank">Buy Now on Pump.fun</a>
+        <a href="https://pump.fun" class="cta-button" target="_blank">Buy Now on Pump.fun</a>
       </div>
     </div>
   </header>
@@ -225,8 +225,8 @@
       <ol>
         <li>Download and install the <a href="https://phantom.app/" target="_blank">Phantom Wallet</a>.</li>
         <li>Fund your wallet with SOL (Solana's native token).</li>
-        <li>Copy the $EID contract address (available after launch).</li>
-        <li>Paste the contract address into your wallet or a DEX like <a href="https://raydium.io/" target="_blank">Raydium</a> or <a href="https://orca.so/" target="_blank">Orca</a> to swap SOL for $EID.</li>
+        <li>Go to <a href="https://pump.fun" target="_blank">Pump.fun</a> and connect your wallet</li>
+        <li>Search for $EID or use our direct link to buy</li>
       </ol>
     </div>
   </section>
@@ -236,8 +236,8 @@
     <div class="container">
       <h2>Contract Address</h2>
       <div id="contract-address">
-        <p>Contract address will be available after launch.</p>
-        <input type="text" id="contract-input" placeholder="Enter contract address here" disabled>
+        <p>Contract address will appear here after purchase on Pump.fun</p>
+        <input type="text" id="contract-input" placeholder="Contract address will appear here after launch" disabled>
         <button id="copy-address">Copy Address</button>
       </div>
     </div>
@@ -257,25 +257,8 @@
 
   <!-- JavaScript -->
   <script>
-    // Countdown to Launch (March 26, 2025 at 00:00 UTC)
-    const launchDate = new Date(2025, 2, 26, 0, 0, 0).getTime();
-
-    const countdown = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = launchDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s until launch!`;
-
-      if (distance < 0) {
-        clearInterval(countdown);
-        document.getElementById("countdown").innerHTML = "🚀 $EID IS LIVE! BUY NOW!";
-      }
-    }, 1000);
+    // Since the coin is live, we show "LIVE" message
+    document.getElementById("countdown").innerHTML = "🚀 $EID IS LIVE! BUY NOW!";
 
     // Copy Contract Address
     document.getElementById("copy-address").addEventListener("click", () => {
