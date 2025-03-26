@@ -5,16 +5,164 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eid Memecoin – Halal Crypto Joy</title>
   <style>
-    /* Previous CSS remains the same */
-    /* Added new countdown style */
-    #countdown {
-      font-size: 1.5rem;
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header */
+    header {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(135deg, #2ecc71, #3498db);
+      color: white;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .overlay {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin: 0;
       font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    h1 span {
+      color: #e67e22; /* Accent color for "Eid Memecoin" */
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 10px 0 20px;
+    }
+
+    .cta-button {
+      background: #e67e22;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      margin: 10px;
+      transition: background 0.3s ease;
+      display: inline-block; /* Ensure buttons are inline */
+    }
+
+    .cta-button:hover {
+      background: #d35400;
+    }
+
+    /* Stack Buttons on Mobile */
+    @media (max-width: 768px) {
+      .cta-button {
+        display: block; /* Stack buttons vertically */
+        width: 80%; /* Make buttons wider for better touch targets */
+        margin: 10px auto; /* Center buttons */
+      }
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 0;
+      background: white;
       margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #2ecc71;
+      text-align: center;
+    }
+
+    ul, ol {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li, ol li {
+      background: #fff;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    ul li:hover, ol li:hover {
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    footer .social-links a {
+      color: #e67e22;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Contract Address Section */
+    #contract-address {
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #contract-address input {
+      width: 80%;
       padding: 10px;
-      background: rgba(0,0,0,0.2);
-      border-radius: 8px;
-      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    #copy-address {
+      background: #2ecc71;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    #copy-address:hover {
+      background: #27ae60;
     }
   </style>
 </head>
@@ -23,22 +171,94 @@
   <header>
     <div class="container">
       <div class="overlay">
+        <!-- Updated Header Text -->
         <h1><span>Eid Memecoin</span> $EID</h1>
         <p>Halal Crypto Joy for the Community!</p>
         <p id="countdown">Loading countdown...</p>
-        <!-- Updated Buttons -->
+        <!-- Buttons -->
         <a href="#how-to-buy" class="cta-button">How to Buy $EID</a>
-        <a href="#join-community" class="cta-button">Join Our Community</a>
+        <a href="https://pump.fun/your-coin-link" class="cta-button" target="_blank">Buy Now on Pump.fun</a>
       </div>
     </div>
   </header>
 
-  <!-- Previous sections remain the same until JavaScript -->
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About $EID</h2>
+      <p>$EID is a festive memecoin built on Solana, designed to bring joy, generosity, and financial blessings during Eid celebrations. Join us in making Eid more meaningful!</p>
+    </div>
+  </section>
+
+  <!-- Why Invest Section -->
+  <section id="why-invest">
+    <div class="container">
+      <h2>Why Invest in $EID?</h2>
+      <ul>
+        <li><strong>Halal-Compliant:</strong> Aligns with Islamic financial principles.</li>
+        <li><strong>Community-Driven:</strong> Built for and by the community.</li>
+        <li><strong>High Growth Potential:</strong> Early investors stand to benefit the most.</li>
+        <li><strong>Transparent:</strong> Fully audited and secure.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Tokenomics Section -->
+  <section id="tokenomics">
+    <div class="container">
+      <h2>Tokenomics</h2>
+      <ul>
+        <li><strong>Total Supply:</strong> 1,000,000,000 $EID</li>
+        <li><strong>50%:</strong> Public Sale</li>
+        <li><strong>20%:</strong> Liquidity Pool</li>
+        <li><strong>15%:</strong> Marketing</li>
+        <li><strong>10%:</strong> Team (locked for 6-12 months)</li>
+        <li><strong>5%:</strong> Charity Fund</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- How to Buy Section -->
+  <section id="how-to-buy">
+    <div class="container">
+      <h2>How to Buy $EID</h2>
+      <ol>
+        <li>Download and install the <a href="https://phantom.app/" target="_blank">Phantom Wallet</a>.</li>
+        <li>Fund your wallet with SOL (Solana's native token).</li>
+        <li>Copy the $EID contract address (available after launch).</li>
+        <li>Paste the contract address into your wallet or a DEX like <a href="https://raydium.io/" target="_blank">Raydium</a> or <a href="https://orca.so/" target="_blank">Orca</a> to swap SOL for $EID.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Contract Address Section -->
+  <section id="contract">
+    <div class="container">
+      <h2>Contract Address</h2>
+      <div id="contract-address">
+        <p>Contract address will be available after launch.</p>
+        <input type="text" id="contract-input" placeholder="Enter contract address here" disabled>
+        <button id="copy-address">Copy Address</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Eid Memecoin ($EID). All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://twitter.com/eid_solana" target="_blank">Twitter</a>
+        <a href="https://t.me/+VPahElr3tjQwYmM0" target="_blank">Telegram</a>
+        <a href="https://discord.com" target="_blank">Discord</a>
+      </div>
+    </div>
+  </footer>
 
   <!-- JavaScript -->
   <script>
-    // Updated Countdown to Launch (March 29, 2025 at 00:00 UTC)
-    const launchDate = new Date(2025, 2, 29, 0, 0, 0).getTime();
+    // Countdown to Launch (March 26, 2025 at 00:00 UTC)
+    const launchDate = new Date(2025, 2, 26, 0, 0, 0).getTime();
 
     const countdown = setInterval(() => {
       const now = new Date().getTime();
@@ -49,19 +269,33 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      document.getElementById("countdown").innerHTML = 
-        `🚀 Launching in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+      document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s until launch!`;
 
       if (distance < 0) {
         clearInterval(countdown);
         document.getElementById("countdown").innerHTML = "🚀 $EID IS LIVE! BUY NOW!";
-        // Update button when live
-        document.querySelector('.cta-button[href="#join-community"]').href = "https://pump.fun";
-        document.querySelector('.cta-button[href="#join-community"]').textContent = "Buy Now on Pump.fun";
       }
     }, 1000);
 
-    // Rest of your JavaScript remains the same
+    // Copy Contract Address
+    document.getElementById("copy-address").addEventListener("click", () => {
+      const contractInput = document.getElementById("contract-input");
+      contractInput.removeAttribute("disabled");
+      contractInput.select();
+      document.execCommand("copy");
+      contractInput.setAttribute("disabled", true);
+      alert("Contract address copied to clipboard!");
+    });
+
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
   </script>
 </body>
 </html>
