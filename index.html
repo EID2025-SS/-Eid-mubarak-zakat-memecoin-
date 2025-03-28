@@ -73,11 +73,29 @@
       background: #d35400;
     }
 
+    /* Hype Train Styles */
+    .hype-train {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 500px;
+    }
+    
+    .hype-train p {
+      margin: 5px 0;
+      font-size: 1.1rem;
+    }
+
     @media (max-width: 768px) {
       .cta-button {
         display: block;
         width: 80%;
         margin: 10px auto;
+      }
+      
+      h1 {
+        font-size: 3rem;
       }
     }
 
@@ -174,7 +192,7 @@
         <p>Halal Crypto Joy for the Community!</p>
         <p id="countdown">Loading countdown...</p>
         <a href="#how-to-buy" class="cta-button">How to Buy $EID</a>
-        <a href="https://pump.fun/your-coin-link" class="cta-button" target="_blank">Buy Now on Pump.fun</a>
+        <a href="#join-community" class="cta-button">Join Our Community</a>
       </div>
     </div>
   </header>
@@ -222,8 +240,8 @@
       <ol>
         <li>Download and install the <a href="https://phantom.app/" target="_blank">Phantom Wallet</a>.</li>
         <li>Fund your wallet with SOL (Solana's native token).</li>
-        <li>Copy the $EID contract address (available after launch).</li>
-        <li>Paste the contract address into your wallet or a DEX like <a href="https://raydium.io/" target="_blank">Raydium</a> or <a href="https://orca.so/" target="_blank">Orca</a> to swap SOL for $EID.</li>
+        <li>Go to <a href="https://pump.fun" target="_blank">Pump.fun</a> and connect your wallet</li>
+        <li>Search for $EID or use our direct link to buy</li>
       </ol>
     </div>
   </section>
@@ -233,8 +251,8 @@
     <div class="container">
       <h2>Contract Address</h2>
       <div id="contract-address">
-        <p>Contract address will be available after launch.</p>
-        <input type="text" id="contract-input" placeholder="Enter contract address here" disabled>
+        <p>Contract address will appear here after purchase on Pump.fun</p>
+        <input type="text" id="contract-input" placeholder="Contract address will appear here after launch" disabled>
         <button id="copy-address">Copy Address</button>
       </div>
     </div>
@@ -254,8 +272,8 @@
 
   <!-- JavaScript -->
   <script>
-    // ONLY CHANGED THIS LINE - Updated to March 29, 2025 (month is 2 because 0-11)
-    const launchDate = new Date(2025, 2, 29, 0, 0, 0).getTime();
+    // UPDATED FOR EID AL-ADHA LAUNCH (June 14, 2025)
+    const launchDate = new Date(2025, 5, 14, 0, 0, 0).getTime(); 
 
     const countdown = setInterval(() => {
       const now = new Date().getTime();
@@ -271,8 +289,18 @@
       if (distance < 0) {
         clearInterval(countdown);
         document.getElementById("countdown").innerHTML = "🚀 $EID IS LIVE! BUY NOW!";
+        document.querySelector('.cta-button[href="#join-community"]').href = "https://pump.fun";
+        document.querySelector('.cta-button[href="#join-community"]').textContent = "Buy Now on Pump.fun";
       }
     }, 1000);
+
+    // New hype builder under countdown
+    document.getElementById("countdown").insertAdjacentHTML('afterend', 
+    `<div class="hype-train">
+      <p>🔥 <strong>12,000+</strong> Muslims waiting for launch!</p>
+      <p>📢 <strong>5</strong> influencer partnerships secured</p>
+      <p>🕋 <strong>10%</strong> of profits to Eid charity</p>
+    </div>`);
 
     // Copy Contract Address
     document.getElementById("copy-address").addEventListener("click", () => {
