@@ -73,18 +73,11 @@
       background: #d35400;
     }
 
-    /* Hype Train Styles */
-    .hype-train {
-      background: rgba(255,255,255,0.1);
-      padding: 15px;
-      border-radius: 10px;
-      margin: 20px auto;
-      max-width: 500px;
-    }
-    
-    .hype-train p {
-      margin: 5px 0;
-      font-size: 1.1rem;
+    /* Community Buttons Container */
+    .community-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     @media (max-width: 768px) {
@@ -191,8 +184,11 @@
         <h1><span>Eid Memecoin</span> $EID</h1>
         <p>Halal Crypto Joy for the Community!</p>
         <p id="countdown">Loading countdown...</p>
-        <a href="#how-to-buy" class="cta-button">How to Buy $EID</a>
-        <a href="#join-community" class="cta-button">Join Our Community</a>
+        <div class="community-buttons">
+          <a href="#how-to-buy" class="cta-button">How to Buy $EID</a>
+          <a href="https://twitter.com/eid_solana" class="cta-button" target="_blank">Twitter</a>
+          <a href="https://t.me/+VPahElr3tjQwYmM0" class="cta-button" target="_blank">Telegram</a>
+        </div>
       </div>
     </div>
   </header>
@@ -289,18 +285,12 @@
       if (distance < 0) {
         clearInterval(countdown);
         document.getElementById("countdown").innerHTML = "🚀 $EID IS LIVE! BUY NOW!";
-        document.querySelector('.cta-button[href="#join-community"]').href = "https://pump.fun";
-        document.querySelector('.cta-button[href="#join-community"]').textContent = "Buy Now on Pump.fun";
+        // Update buttons when live
+        const buttons = document.querySelectorAll('.community-buttons .cta-button');
+        buttons[1].textContent = "BUY NOW";
+        buttons[1].href = "https://pump.fun";
       }
     }, 1000);
-
-    // New hype builder under countdown
-    document.getElementById("countdown").insertAdjacentHTML('afterend', 
-    `<div class="hype-train">
-      <p>🔥 <strong>12,000+</strong> Muslims waiting for launch!</p>
-      <p>📢 <strong>5</strong> influencer partnerships secured</p>
-      <p>🕋 <strong>10%</strong> of profits to Eid charity</p>
-    </div>`);
 
     // Copy Contract Address
     document.getElementById("copy-address").addEventListener("click", () => {
